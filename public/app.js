@@ -1,5 +1,5 @@
-var host = window.document.location.host.replace(/:.*/, '');
-var ws = new WebSocket('ws://' + host + ':6056');
+var host = location.origin.replace(/^http/, 'ws');
+var ws = new WebSocket(host);
 var consoleDiv = document.getElementById('console');
 var welcomeDiv = document.getElementById('welcome');
 ws.onmessage = function (event) {
